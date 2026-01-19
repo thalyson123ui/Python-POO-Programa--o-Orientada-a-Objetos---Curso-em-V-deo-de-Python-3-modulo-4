@@ -1,9 +1,9 @@
 # declaração de classes
 class Gafanhoto:
-    def __init__(self, n="vazio", i=0):
+    def __init__(self, nome="vazio", idade=0):
         # atributos de instância
-        self.nome = n
-        self.idade = i
+        self.nome = nome
+        self.idade = idade
 
     # métodos de instância
     def aniversario(self):
@@ -21,3 +21,6 @@ print(g1.mensagem())
 g2 = Gafanhoto(n="João", i=20)
 g2.aniversario()
 print(g2.mensagem())
+
+g3 = Gafanhoto()
+print(g3.mensagem())
