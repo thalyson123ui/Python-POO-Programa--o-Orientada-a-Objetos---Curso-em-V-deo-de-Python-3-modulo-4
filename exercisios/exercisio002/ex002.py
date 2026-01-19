@@ -20,11 +20,16 @@ class Gafanhoto:
 
     def __str__(self): # dunder method
         return f"{self.nome} é Gafanhoto(a) e tem {self.idade} anos de idade."
+    
+    def __getstate__(self):
+        return f"estado: nome={self.nome}, idade-{self.idade}"
 
 
 # declaração de objetos
 g1 = Gafanhoto(nome="Maria", idade=22)
-g1.aniversario()
+#g1.aniversario()
+print(g1.__dict__)  # exibe os atributos do objeto em forma de dicionário
+print(g1.__getstate__()) # exibe os atributos do objeto em forma de dicionário
 
 #print(g1.__doc__)  # exibe a docstring da classe
 
