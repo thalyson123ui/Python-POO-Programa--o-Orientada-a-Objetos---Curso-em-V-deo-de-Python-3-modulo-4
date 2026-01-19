@@ -30,6 +30,4 @@ g1 = Gafanhoto(nome="Maria", idade=22)
 #g1.aniversario()
 print(g1.__dict__)  # exibe os atributos do objeto em forma de dicionário
 print(g1.__getstate__()) # exibe os atributos do objeto em forma de dicionário
-
-#print(g1.__doc__)  # exibe a docstring da classe
-
+print(g1.__class__)  # exibe a classe do objeto
