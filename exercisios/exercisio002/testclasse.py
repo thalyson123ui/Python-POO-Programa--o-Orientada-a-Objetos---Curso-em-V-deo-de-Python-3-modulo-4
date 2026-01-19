@@ -1,3 +1,3 @@
-print(int.__doc__)
+print(int.__doc__)  # Exibe a docstring da classe int
 
-# dunder = double underline
+#DUNDER =double underline
