@@ -16,10 +16,9 @@ class Gafanhoto:
     def aniversario(self):
         self.idade += 1
 
-    def mensagem(self):
-        return f"{self.nome} é Gafanhoto(a) e tem {self.idade} anos de idade."
+    
 
-    def __str__(self):
+    def __str__(self): # dunder method
         return f"{self.nome} é Gafanhoto(a) e tem {self.idade} anos de idade."
 
 
@@ -27,5 +26,5 @@ class Gafanhoto:
 g1 = Gafanhoto(nome="Maria", idade=22)
 g1.aniversario()
 
-print(g1.__doc__)  # exibe a docstring da classe
-print(g1)
+#print(g1.__doc__)  # exibe a docstring da classe
+
