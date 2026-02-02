@@ -6,7 +6,7 @@ from rich.text import Text
 class Livro:
     def __init__(self, titulo: str, total_paginas: int):
         self.titulo = titulo
-        self.total_paginas = total_paginas
+        self.total_paginas = 512
         self.pagina_atual = 1
 
     def avancar_pagina(self):
