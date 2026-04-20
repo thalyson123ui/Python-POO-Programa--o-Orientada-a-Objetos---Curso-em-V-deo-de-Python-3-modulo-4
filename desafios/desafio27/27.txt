@@ -1,0 +1,19 @@
+simule o sistema da batalha entre perssonagens de um rpg
+
+estrutura:
+
+perssonagens (abstract)
+.nome
+.vida
+.golpes
+atacar(alvo,força)
+receber-dano(dano)
+curar() (abstract)
+
+classes:
+
+guerreiro
+curar()
+
+mago
+curar()

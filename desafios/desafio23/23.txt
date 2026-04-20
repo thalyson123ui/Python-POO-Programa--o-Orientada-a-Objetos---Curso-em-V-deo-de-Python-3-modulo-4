@@ -1,0 +1,20 @@
+implemente o seguuinte diagrama de classes 
+
+estrutura:
+
+poligono (abstract)
+qtd_lados
+perimetro() (abstract)
+area() (abstract)
+
+classes:
+
+quadrado 
+lado
+parametro()
+area()
+
+circulo
+raio
+parametro()
+area()

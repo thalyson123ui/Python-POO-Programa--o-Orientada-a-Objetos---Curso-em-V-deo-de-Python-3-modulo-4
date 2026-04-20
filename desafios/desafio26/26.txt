@@ -1,0 +1,22 @@
+crie a estrutura capaz de calcular salarios de funcionarios diferentes
+
+estrutura:
+
+funcionario (abstract)
+.nome
+.salario-bruto
+salario
+salario-minimo = 1612
+inss = 7.5
+
+calcular-salario() (abstract)
+analisar-salario()
+
+classes:
+
+horista
+valor por hora trabalhadas
+calcular-salario()
+
+mensalista
+calcular-salario

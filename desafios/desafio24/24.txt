@@ -1,0 +1,23 @@
+simule uma cafeteria orientada a objetos
+
+estrutura:
+
+bebidaquente (abstract)
+preparar()
+ferver_agua()
+misturar() (abstract)
+servir() (abstract)
+
+classes:
+
+café
+misturar()
+servir()
+
+cha
+misturar()
+servir()
+
+leite
+misturar()
+servir()

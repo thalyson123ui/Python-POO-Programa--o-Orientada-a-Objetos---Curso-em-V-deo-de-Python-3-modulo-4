@@ -1,0 +1,22 @@
+crie classes capazes de calcular fretes de veiculos diferentes
+
+estrutura:
+
+transporte (abstract)
+.distancia
+.frete
+. calculo_frete() abstract()
+
+classes
+
+moto
+fator = 0,50
+calculo_frete() -- livre 
+
+caminhão
+fator = 1,20
+calculo_frete() -- minimo 50 kilometros
+
+drone
+fator = 9,50
+calculo_frete -- minimo 10 kilometros
