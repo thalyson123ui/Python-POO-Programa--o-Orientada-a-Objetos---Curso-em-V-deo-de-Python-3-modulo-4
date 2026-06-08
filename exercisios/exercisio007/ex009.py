@@ -5,7 +5,16 @@ class Avaliacao:
     def __init__(self, nome, disciplina, nota):
         self.nome = nome
         self.disciplina = disciplina
-        print("Criando avaliação para [bold magenta]{}[/bold magenta] na disciplina [bold cyan]{}[/bold cyan] com nota [bold yellow]{}[/bold yellow]".format(nome, disciplina, nota))
+
+        print(
+            f"Criando avaliação para "
+            f"[bold magenta]{nome}[/bold magenta] "
+            f"na disciplina "
+            f"[bold cyan]{disciplina}[/bold cyan] "
+            f"com nota "
+            f"[bold yellow]{nota}[/bold yellow]"
+        )
+
         self.__nota = None
         self.set_nota(nota)
 
@@ -16,8 +25,11 @@ class Avaliacao:
         if 0 <= nota <= 10:
             self.__nota = nota
         else:
-            print("Nota inválida. A nota deve estar entre 0 e 10.")
+            raise ValueError("A nota deve estar entre 0 e 10.")
 
 
-# inspeciona a classe incluindo atributos privados
-inspect(Avaliacao, private=True)
+av1 = Avaliacao("Thalyso", "Cálculo 1", 8.5)
+
+print(f"\nNota cadastrada: [green]{av1.get_nota()}[/green]")
+
+inspect(av1, private=True)
