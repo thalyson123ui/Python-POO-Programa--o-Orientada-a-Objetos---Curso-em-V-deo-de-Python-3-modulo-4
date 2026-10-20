@@ -42,12 +42,15 @@ if total_registros == 0:
   print('Amigos de exemplo inseridos com sucesso!')
 
 # 4. Consulta os dados para confirmar a gravação
-cursor.execute('SELECT id, nome, data_nascimento FROM amigos')
-registros = cursor.fetchall()
+try:
+  cursor.execute('SELECT id, nome, data_nascimento FROM amigos')
+  registros = cursor.fetchall()
 
-print('\n--- Lista de Amigos ---')
-for amigo in registros:
-  print(f'ID: {amigo[0]} | Nome: {amigo[1]} | Nascimento: {amigo[2]}')
+  print('\n--- Lista de Amigos ---')
+  for amigo in registros:
+    print(f'ID: {amigo[0]} | Nome: {amigo[1]} | Nascimento: {amigo[2]}')
+except sqlite3.Error as e:
+  print(f'Erro ao acessar o banco de dados: {e}')
 
 # 5. Fecha a conexão com o banco de dados
 conexao.close()
