@@ -120,7 +120,7 @@ def exibir_menu():
     print("\n" + "=" * 30)
     print("   SISTEMA DE CADASTRO")
     print("=" * 30)
-    print("1. Cadastrar pessoa")
+    print("1. Cadastrar pessoa") # <-- LINHA CORRIGIDA
     print("2. Listar pessoas")
     print("3. Atualizar pessoa")
     print("4. Excluir pessoa")
@@ -129,7 +129,6 @@ def exibir_menu():
     print("=" * 30)
 
 def main():
-    # Corrigido: Agora verifica se a função retornou False (falhou)
     if not criar_banco():
         print("Falha ao criar o banco de dados. Encerrando o programa.")
         raise SystemExit
