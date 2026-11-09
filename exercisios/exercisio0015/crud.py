@@ -37,10 +37,43 @@ def cadastro_em_massa():
         print(f"Falha no cadastro em massa: {error}")
 
 def cadastrar_pessoa() -> bool:
-    pass
+    print("\n novo cadastro de pessoa")
+    nome = input("Nome: ").strip()
+    if not nome:
+        print("Nome não pode ser vazio.")
+        return True
+
+    altura = input("Altura: ").strip()
+    if not altura:
+        print("Altura não pode ser vazia.")
+        return True
+
+    try:
+        with sqlite3.connect(NOME_BANCO) as db:
+            cursor = db.cursor()
+            cursor.execute("INSERT INTO pessoas (nome, altura) VALUES (?, ?);", (nome, float(altura)))
+            print("Pessoa cadastrada com sucesso.")
+            return True
+    except sqlite3.Error as error:
+        print(f"Falha ao cadastrar pessoa: {error}")
+        return False
 
 def listar_pessoas() -> bool:
-    pass
+    try:
+        with sqlite3.connect(NOME_BANCO) as db:
+            cursor = db.cursor()
+            cursor.execute("SELECT cod, nome, altura FROM pessoas ORDER BY cod")
+            pessoas = cursor.fetchall()
+            if pessoas:
+                print("\nLista de Pessoas:")
+                for cod, nome, altura in pessoas:
+                    print(f"  {cod} - {nome} (Altura: {altura})")
+            else:
+                print("Nenhuma pessoa cadastrada.")
+        return True
+    except sqlite3.Error as error:
+        print(f"Falha ao listar pessoas: {error}")
+        return False
 
 def atualizar_pessoa() -> bool:
     pass

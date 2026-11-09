@@ -129,7 +129,7 @@ def exibir_menu():
     print("=" * 30)
 
 
-def cadastro_em_massa(): # <-- CORRIGIDO O ASTERISCO AQUI
+# def cadastro_em_massa()#:  <-- CORRIGIDO O ASTERISCO AQUI
     """Função opcional para cadastro inicial em massa.
     Como o banco é criado apenas em main(), ela é mantida como no-op para evitar
     erros de variável indefinida.
@@ -139,7 +139,7 @@ def cadastro_em_massa(): # <-- CORRIGIDO O ASTERISCO AQUI
 
 def main():
 
-    cadastro_em_massa()  # Chamada para cadastrar pessoas em massa
+    #cadastro_em_massa()  # Chamada para cadastrar pessoas em massa
 
     if not criar_banco():
         print("Falha ao criar o banco de dados. Encerrando o programa.")
