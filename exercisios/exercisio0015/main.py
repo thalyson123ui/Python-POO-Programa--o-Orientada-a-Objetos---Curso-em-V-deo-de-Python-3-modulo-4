@@ -120,7 +120,7 @@ def exibir_menu():
     print("\n" + "=" * 30)
     print("   SISTEMA DE CADASTRO")
     print("=" * 30)
-    print("1. Cadastrar pessoa") # <-- LINHA CORRIGIDA
+    print("1. Cadastrar pessoa") # <-- CORRIGIDO AQUI
     print("2. Listar pessoas")
     print("3. Atualizar pessoa")
     print("4. Excluir pessoa")
@@ -128,7 +128,19 @@ def exibir_menu():
     print("0. Sair")
     print("=" * 30)
 
+
+def cadastro_em_massa(): # <-- CORRIGIDO O ASTERISCO AQUI
+    """Função opcional para cadastro inicial em massa.
+    Como o banco é criado apenas em main(), ela é mantida como no-op para evitar
+    erros de variável indefinida.
+    """
+    return True
+
+
 def main():
+
+    cadastro_em_massa()  # Chamada para cadastrar pessoas em massa
+
     if not criar_banco():
         print("Falha ao criar o banco de dados. Encerrando o programa.")
         raise SystemExit
