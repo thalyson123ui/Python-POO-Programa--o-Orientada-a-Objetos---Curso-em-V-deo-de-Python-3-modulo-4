@@ -82,7 +82,29 @@ def excluir_pessoa() -> bool:
     pass
 
 def buscar_por_nome() -> bool:
-    pass
+    print("\nBuscar pessoa por nome")
+
+    termo = input("Digite o nome ou parte do nome: ").strip()
+
+    if not termo:
+        print("Termo de busca não pode ser vazio.")
+        return False
+
+    try:
+        with sqlite3.connect(NOME_BANCO) as db:
+            cursor = db.cursor()
+            cursor.execute("SELECT cod, nome, altura FROM pessoas WHERE nome LIKE ? ORDER BY cod", (f"%{termo}%",))
+            resultados = cursor.fetchall()
+            if resultados:
+                print("\nResultados da busca:")
+                for cod, nome, altura in resultados:
+                    print(f"  {cod} - {nome} (Altura: {altura})")
+            else:
+                print("Nenhuma pessoa encontrada com esse termo.")
+        return True
+    except sqlite3.Error as error:
+        print(f"Falha na busca por nome: {error}")
+        return False
 
 # Exemplo de uso para testar se está tudo funcionando
 if __name__ == "__main__":
